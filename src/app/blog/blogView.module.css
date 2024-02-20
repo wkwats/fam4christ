@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  gap: 20px;
+}
+.leftDiv {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}

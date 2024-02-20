@@ -1,0 +1,42 @@
+.container {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.left {
+  width: 500px;
+  height: 500px;
+  flex: 1;
+  position: "relative";
+}
+.image {
+  object-fit: cover;
+}
+
+.right {
+  flex: 1;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+.group {
+  display: flex;
+  margin: 30px 10px;
+  width: 100%;
+}
+.basicSlide {
+  width: 100%;
+  padding: 10px 0 10px 15px;
+  font-family: "Open Sans", sans;
+  font-weight: 400;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+}

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  width: 15%;
+  height: 80px;
+  justify-content: center;
+  border-radius: 10px;
+}
+.imgContainer {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
+.topicName {
+  color: var(--headings-soft);
+  font-weight: bold;
+  font-size: small;
+}

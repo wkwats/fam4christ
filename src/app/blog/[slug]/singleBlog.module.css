@@ -1,0 +1,169 @@
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 50px;
+  color: var(--headings-soft);
+  font-family: "Lora", serif;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-family: "Lora", serif;
+}
+
+.username {
+  font-size: medium;
+  font-weight: 500;
+  color: var(--headings-soft);
+}
+.authorName {
+  font-size: small;
+  font-weight: bold;
+  color: var(--headings-soft);
+}
+
+.imageContainer {
+  flex: 1;
+  height: 350px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+
+.post {
+  flex: 5;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.description p {
+  font-size: 1.2rem;
+
+  text-indent: 2em;
+  font-family: "Lora", serif;
+}
+
+/* .description p:first-letter {
+  text-transform: capitalize;
+  font-weight: bold;
+} */
+.likesTags {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.likes {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.iconDiv {
+  padding: 8px;
+  display: flex;
+  height: 20px;
+  width: 120px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--background-third);
+  border-radius: 30px;
+}
+
+.tagDiv {
+  display: flex;
+
+  width: 120px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--bg-soft);
+  border-radius: 4px;
+}
+.tagName {
+  font-size: small;
+  font-weight: 600;
+  padding: 8px;
+  text-transform: capitalize;
+  color: var(--);
+}
+.verticalLine {
+  color: var(--headings-soft);
+  font-weight: 100;
+}
+
+.icons {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (max-width: 1536px) {
+  .title {
+    font-size: 54px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .imageContainer {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .description p {
+    font-size: 18px;
+  }
+}

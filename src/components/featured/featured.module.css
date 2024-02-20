@@ -1,0 +1,110 @@
+.featured {
+  flex: 9;
+  display: flex;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.imgContainer {
+  position: relative;
+  flex: 1;
+}
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.userTitle {
+  font-size: x-large;
+  font-weight: bold;
+  color: var(--headings-soft);
+}
+.notifications {
+  flex: 3;
+  background: red;
+  padding: 20px;
+  border-radius: 4px;
+}
+.userImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.userIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  filter: grayscale(1);
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.authorName {
+  font-size: small;
+  font-weight: bold;
+  color: var(--headings-soft);
+}
+.userDate {
+  font-size: small;
+  font-style: italic;
+}
+
+.footer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footerDiv {
+  padding: 8px;
+  display: flex;
+  height: 30px;
+  width: 120px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--background-third);
+  border-radius: 30px;
+}
+.footerVerticalLine {
+  color: var(--headings-soft);
+  font-weight: 200;
+}
+
+.footerIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.button {
+  padding: 20px;
+  min-width: 120px;
+  cursor: pointer;
+  border: 2px solid var(--background-second);
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--bg-primary);
+}

@@ -1,0 +1,112 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "mongodb"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid()) @map("_id")
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid()) @map("_id")
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String     @id @default(cuid()) @map("_id")
+  name          String?
+  email         String     @unique
+  emailVerified DateTime?
+  image         String?
+  role          String
+  // password      String?
+  accounts      Account[]
+  sessions      Session[]
+  articles      Article[]
+  comments      Comment[]
+  categories    Category[]
+}
+
+model VerificationToken {
+  identifier String   @id @default(cuid()) @map("_id")
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Category {
+  id        String    @id @default(cuid()) @map("_id")
+  slug      String    @unique
+  title     String    @unique
+  img       String?
+  articles  Article[]
+  likes     Int       @default(0)
+  userEmail String
+  user      User      @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+}
+
+enum Status {
+  PENDING
+  PUBLISHED
+}
+
+model Article {
+  id        String    @id @default(cuid()) @map("_id")
+  createdAt DateTime  @default(now())
+  slug      String    @unique
+  title     String
+  desc      String
+  img       String?
+  status    Status    @default(PENDING)
+  views     Int       @default(0)
+  likes     Int       @default(0)
+  catSlug   String
+  category  Category  @relation(fields: [catSlug], references: [slug], onDelete: Cascade)
+  userEmail String
+  user      User      @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+  comments  Comment[]
+  tags      String[]  @default([""])
+}
+
+model Comment {
+  id          String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime @default(now())
+  desc        String
+  likes       Int      @default(0)
+  articleSlug String
+  article     Article  @relation(fields: [articleSlug], references: [slug], onDelete: Cascade)
+  userEmail   String
+  user        User     @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+}
+
+model Tag {
+  id  String @id @default(cuid()) @map("_id")
+  tag String
+}
