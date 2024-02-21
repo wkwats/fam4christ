@@ -20,32 +20,34 @@ export default async function TopicLinks() {
       <h1 className={styles.title}>Popular Blog Titles</h1>
       <div className={styles.categories}>
         {categories &&
-          categories.map((item) => (
-            <Link
-              href={`/blog?cat=${item.slug}`}
-              className={styles.category}
-              style={{
-                backgroundColor:
-                  color_list[Math.floor(Math.random() * color_list.length)],
-              }}
-              key={item.id}
-            >
-              {item.img && (
-                <div className={styles.imgContainer}>
-                  <Image
-                    fill
-                    src={item.img}
-                    alt=""
-                    style={{
-                      objectFit: "cover",
-                      borderRadius: "4px 0px 0px 4px",
-                    }}
-                  />
-                </div>
-              )}
-              {item.title}
-            </Link>
-          ))}
+          categories.map((item) => {
+            return (
+              <Link
+                href={`/blog?cat=${item.slug}`}
+                className={styles.category}
+                style={{
+                  backgroundColor:
+                    color_list[Math.floor(Math.random() * color_list.length)],
+                }}
+                key={item.id}
+              >
+                {item.img && (
+                  <div className={styles.imgContainer}>
+                    <Image
+                      fill
+                      src={item.img}
+                      alt=""
+                      style={{
+                        objectFit: "cover",
+                        borderRadius: "4px 0px 0px 4px",
+                      }}
+                    />
+                  </div>
+                )}
+                {item.title}
+              </Link>
+            );
+          })}
       </div>
     </div>
   );

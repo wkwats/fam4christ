@@ -5,7 +5,8 @@ import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
-// import { useSession } from "next-auth/react";
+import dynamic from "next/dynamic";
+
 import {
   getStorage,
   ref,
@@ -13,11 +14,12 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+// import ReactQuill from "react-quill";
 
 const WritePage = ({ searchParams }) => {
   const { category } = searchParams;
-  //const { status } = useSession();
+
   const router = useRouter();
   const [percent, setPercent] = useState(0);
   const [open, setOpen] = useState(false);
@@ -32,9 +34,7 @@ const WritePage = ({ searchParams }) => {
     const upload = () => {
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
-
       const uploadTask = uploadBytesResumable(storageRef, file);
-
       uploadTask.on(
         "state_changed",
         (snapshot) => {
@@ -42,7 +42,7 @@ const WritePage = ({ searchParams }) => {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           );
           setPercent(progress);
-          console.log("Upload is " + progress + "% done");
+          // console.log("Upload is " + progress + "% done");
           switch (snapshot.state) {
             case "paused":
               console.log("Upload is paused");
@@ -63,14 +63,6 @@ const WritePage = ({ searchParams }) => {
 
     file && upload();
   }, [file]);
-
-  // if (status === "loading") {
-  //   return <div className={styles.loading}>Loading...</div>;
-  // }
-
-  // if (status === "unauthenticated") {
-  //   router.push("/");
-  // }
 
   const slugify = (str) =>
     str
@@ -95,7 +87,7 @@ const WritePage = ({ searchParams }) => {
 
     if (res.status === 200) {
       const data = await res.json();
-      console.log(res);
+
       router.push(`/blog/${data.slug}`);
     }
   };
@@ -179,9 +171,6 @@ const WritePage = ({ searchParams }) => {
                   <span className={styles.addBtnText}>PhotoURL</span>
                 </div>
               </button>
-              {/* <button className={styles.addButton}>
-                <Image src="/video.png" alt="" width={16} height={16} />
-              </button> */}
             </div>
           )}
         </div>

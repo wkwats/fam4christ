@@ -18,7 +18,7 @@ const Footer = () => {
             <p className={styles.desc}>
               We believe that by building strong family foundations on the
               teachings of Christ, we can create lasting bonds, instill values
-              that endure, and navigate life's challenges with faith and
+              that endure, and navigate life&apos;s challenges with faith and
               resilience.
             </p>
           </div>

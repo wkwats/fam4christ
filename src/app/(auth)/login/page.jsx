@@ -14,7 +14,7 @@ const LoginPage = () => {
         <form action={handleGoogleLogin}>
           <button className={styles.github}>
             <span>
-              <Image src="/search.png" height={30} width={30} />
+              <Image src="/search.png" alt="google" height={30} width={30} />
             </span>
             Login with Google
           </button>

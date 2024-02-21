@@ -12,7 +12,7 @@ const Card = ({ key, item }) => {
         <div className={styles.imageContainer}>
           <Image
             src={item.img}
-            alt=""
+            alt="main photo"
             fill
             className={styles.image}
             style={{
@@ -68,14 +68,14 @@ const Card = ({ key, item }) => {
         <div className={styles.footer}>
           <div className={styles.footerDiv}>
             <div className={styles.footerIcon}>
-              <Image fill src="/heart.png" />
+              <Image alt="heart" fill src="/heart.png" />
             </div>
             <span className={styles.footerVerticalLine}>|</span>
             <span className={styles.authorName}>{kFormatter(item?.likes)}</span>
           </div>
           <div className={styles.footerDiv}>
             <div className={styles.footerIcon}>
-              <Image fill src="/message.png" />
+              <Image alt="message" fill src="/message.png" />
             </div>
             <span className={styles.footerVerticalLine}>|</span>
             <span className={styles.authorName}>

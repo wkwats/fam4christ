@@ -67,7 +67,7 @@ const Article = async ({ params }) => {
           </div>
           <div className={styles.iconDiv}>
             <div className={styles.icons}>
-              <Image fill src="/heart.png" />
+              <Image alt="heart" fill src="/heart.png" />
             </div>
             <span className={styles.verticalLine}>|</span>
             <span className={styles.authorName}>
@@ -76,7 +76,7 @@ const Article = async ({ params }) => {
           </div>
           <div className={styles.iconDiv}>
             <div className={styles.icons}>
-              <Image fill src="/message.png" />
+              <Image alt="message" fill src="/message.png" />
             </div>
             <span className={styles.verticalLine}>|</span>
             <span className={styles.authorName}>

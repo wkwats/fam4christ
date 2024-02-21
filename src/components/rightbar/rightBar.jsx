@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const RightBar = () => {
   return (
     <div className="rightbar">
@@ -6,7 +8,10 @@ export const RightBar = () => {
           <span>Suggestions For You</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>John Doe</span>
             </div>
             <div className="buttons">
@@ -19,7 +24,10 @@ export const RightBar = () => {
           <span>Latest Activities</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>John Doe</span>
 
               <span>Published a new article</span>
@@ -28,7 +36,10 @@ export const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>John Doe</span>
               <span>Posted a Status</span>
             </div>
@@ -36,7 +47,10 @@ export const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>John Doe</span>
               <span>Liked an article</span>
             </div>
@@ -47,28 +61,40 @@ export const RightBar = () => {
           <span>Online Friends</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>John Doe</span>
               <div className="online"></div>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="right"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>Jane Doe</span>
               <div className="online"></div>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="images"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>Son Doe</span>
               <div className="online"></div>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800" />
+              <Image
+                alt="images"
+                src="https://images.pexels.com/photos/3343253/pexels-photo-3343253.jpeg?auto=compress&cs=tinysrgb&w=800"
+              />
               <span>Daughter Doe</span>
               <div className="online"></div>
             </div>

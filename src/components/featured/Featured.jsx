@@ -46,7 +46,7 @@ async function Featured() {
               </div>
             </div>
             <div className={styles.userIcon}>
-              <Image fill src="/three-dots.png" />
+              <Image alt="three dots" fill src="/three-dots.png" />
             </div>
           </div>
           <span className={styles.userTitle}>{post?.title}</span>
@@ -62,14 +62,14 @@ async function Featured() {
         <div className={styles.footer}>
           <div className={styles.footerDiv}>
             <div className={styles.footerIcon}>
-              <Image fill src="/heart.png" />
+              <Image alt="heart" fill src="/heart.png" />
             </div>
             <span className={styles.footerVerticalLine}>|</span>
             <span className={styles.authorName}>1.5K</span>
           </div>
           <div className={styles.footerDiv}>
             <div className={styles.footerIcon}>
-              <Image fill src="/message.png" />
+              <Image alt="message" fill src="/message.png" />
             </div>
             <span className={styles.footerVerticalLine}>|</span>
             <span className={styles.authorName}>100</span>

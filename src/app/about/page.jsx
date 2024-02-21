@@ -3,8 +3,6 @@ import { options } from "../api/auth/[...nextauth]/options";
 import { auth } from "@/utils/auth";
 
 const About = async () => {
-  const session = await auth();
-  console.log(session);
   return (
     <>
       <h1>Welcome to Families for Christ!</h1>
@@ -24,7 +22,7 @@ const About = async () => {
       <p>
         We believe that by building strong family foundations on the teachings
         of Christ, we can create lasting bonds, instill values that endure, and
-        navigate life's challenges with faith and resilience.
+        navigate life&apos;s challenges with faith and resilience.
       </p>
       <p>
         Join us at Families for Christ and be a part of a community that
