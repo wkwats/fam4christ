@@ -3,7 +3,7 @@
 import { unstable_noStore as noStore } from "next/cache";
 import prisma from "./connect";
 
-export const getCategory = async (slug) => {
+export const getCategory = async ({ slug }) => {
   const query = {
     where: {
       ...(slug && { slug }),

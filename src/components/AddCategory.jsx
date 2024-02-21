@@ -20,10 +20,8 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { useFormState } from "react-dom";
 import { app } from "@/utils/firebase";
 import { Progress } from "./ui/progress";
-import { revalidatePath, revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 import { toTitleCase } from "@/utils/logic";
 
