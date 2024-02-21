@@ -108,3 +108,9 @@
   font-weight: bold;
   color: var(--bg-primary);
 }
+
+@media screen and (max-width: 1280px) {
+  .imgContainer {
+    display: none;
+  }
+}
