@@ -1,12 +1,14 @@
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-.wrapper{
+.wrapper {
   width: 500px;
-  background-color: var(--bgSoft);
+
+  background-color: var(--background-second);
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -15,13 +17,17 @@
   border-radius: 5px;
 }
 
-.github{
+.github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   width: 100%;
   padding: 20px;
   cursor: pointer;
   background-color: #fff;
   color: #000;
   font-weight: bold;
-  border: none;
+
   border-radius: 5px;
 }

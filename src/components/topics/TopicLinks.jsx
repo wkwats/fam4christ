@@ -20,7 +20,7 @@ export default async function TopicLinks() {
       <h1 className={styles.title}>Popular Blog Titles</h1>
       <div className={styles.categories}>
         {categories &&
-          categories?.map((item) => (
+          categories.map((item) => (
             <Link
               href={`/blog?cat=${item.slug}`}
               className={styles.category}
