@@ -14,7 +14,6 @@ export const authConfig = {
           userRole = "admin";
         }
         return {
-          //...profile,
           id: profile.id,
           email: profile.email,
           name: profile.name,
@@ -30,7 +29,6 @@ export const authConfig = {
           userRole = "admin";
         }
         return {
-          //...profile,
           id: profile.sub,
           email: profile.email,
           name: profile.name,
