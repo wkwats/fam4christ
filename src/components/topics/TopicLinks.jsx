@@ -13,14 +13,15 @@ const color_list = [
   "#57c4ff31",
 ];
 
-export default async function TopicLinks() {
+const TopicLinks = async () => {
   const categories = await getCategories();
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Blog Titles</h1>
       <div className={styles.categories}>
         {categories &&
-          categories.map((item) => {
+          categories?.map((item) => {
             return (
               <Link
                 href={`/blog?cat=${item.slug}`}
@@ -51,4 +52,6 @@ export default async function TopicLinks() {
       </div>
     </div>
   );
-}
+};
+
+export default TopicLinks;

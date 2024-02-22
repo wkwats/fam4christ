@@ -1,5 +1,5 @@
 .featured {
-  flex: 9;
+  flex: 5;
   display: flex;
   height: 100%;
   border-radius: 4px;
@@ -27,12 +27,7 @@
   font-weight: bold;
   color: var(--headings-soft);
 }
-.notifications {
-  flex: 3;
-  background: red;
-  padding: 20px;
-  border-radius: 4px;
-}
+
 .userImg {
   position: relative;
   width: 40px;

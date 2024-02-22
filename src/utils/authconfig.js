@@ -26,7 +26,7 @@ export const authConfig = {
       profile(profile) {
         let userRole = "Google User";
         if (profile?.email == "wkwats@gmail.com") {
-          userRole = "admin";
+          userRole = "author";
         }
         return {
           id: profile.sub,
@@ -60,11 +60,12 @@ export const authConfig = {
       const isDashAdmin = auth?.user.role == "admin";
       const isAuthor = auth?.user.role == "author";
       const isOnAdminPanel = nextUrl?.pathname.startsWith("/dashboard");
+      console.log(isAuthor);
       const isOnLoginPage = nextUrl?.pathname.startsWith("/login");
 
       // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
 
-      if (isOnAdminPanel && (!isDashAdmin || !isAuthor)) {
+      if (isOnAdminPanel && !isAuthor) {
         return false;
       }
 

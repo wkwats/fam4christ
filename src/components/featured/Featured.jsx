@@ -4,10 +4,33 @@ import Link from "next/link";
 import { getFeaturedPost } from "@/utils/data";
 import moment from "moment";
 import parse from "html-react-parser";
+import { Skeleton } from "@/components/ui/skeleton";
 
 async function Featured() {
-  const { article } = await getFeaturedPost();
+  const article = await getFeaturedPost();
   const post = article[0];
+  if (post === undefined) {
+    return (
+      <div className={styles.featured}>
+        <Skeleton className="h-[50%] w-[100%] rounded-xl" />
+        <div className="h-[50%] w-[100%] space-y-2 m-6">
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-12 w-12 rounded-full" />
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+            </div>
+          </div>
+          <Skeleton className="h-4 w-[100%]" />
+          <Skeleton className="h-4 w-[100%]" />
+          <Skeleton className="h-4 w-[90%]" />
+          <Skeleton className="h-4 w-[70%]" />
+          <Skeleton className="h-4 w-[50%]" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.featured}>
       <div className={styles.imgContainer}>

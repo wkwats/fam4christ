@@ -5,6 +5,7 @@ import TopicLinks from "@/components/topics/TopicLinks";
 import { CardList } from "@/components/cardList/CardList";
 import Featured from "@/components/featured/Featured";
 import Menu from "@/components/menu/menu";
+import Notifications from "@/components/notifications/notifications";
 
 const Home = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
@@ -13,7 +14,7 @@ const Home = ({ searchParams }) => {
     <div className={styles.container}>
       <section className={styles.topSec}>
         <Featured />
-        <div className={styles.notifications}>notifications</div>
+        <Notifications />
       </section>
       <TopicLinks />
       <section className={styles.bottomSec}>
