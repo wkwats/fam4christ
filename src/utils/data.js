@@ -12,8 +12,6 @@ export const getCategory = async ({ cat: slug }) => {
     throw new Error("Failed to fetch category!");
   }
 
-  console.log(JSON.stringify(res));
-
   return res.json();
 
   // const query = {
@@ -152,27 +150,4 @@ export const getPost = async (slug) => {
   }
 
   return res.json();
-};
-
-export const getUser = async (id) => {
-  noStore();
-  try {
-    connectToDb();
-    const user = await User.findById(id);
-    return user;
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch user!");
-  }
-};
-
-export const getUsers = async () => {
-  try {
-    connectToDb();
-    const users = await User.find();
-    return users;
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch users!");
-  }
 };

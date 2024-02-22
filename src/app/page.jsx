@@ -6,21 +6,24 @@ import { CardList } from "@/components/cardList/CardList";
 import Featured from "@/components/featured/Featured";
 import Menu from "@/components/menu/menu";
 import Notifications from "@/components/notifications/notifications";
+import { Suspense } from "react";
 
 const Home = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
   const cat = "";
   return (
     <div className={styles.container}>
-      <section className={styles.topSec}>
-        <Featured />
-        <Notifications />
-      </section>
-      <TopicLinks />
-      <section className={styles.bottomSec}>
-        <Menu />
-        <CardList page={page} cat={cat} />
-      </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section className={styles.topSec}>
+          <Featured />
+          <Notifications />
+        </section>
+        <TopicLinks />
+        <section className={styles.bottomSec}>
+          <Menu />
+          <CardList page={page} cat={cat} />
+        </section>
+      </Suspense>
     </div>
   );
 };
