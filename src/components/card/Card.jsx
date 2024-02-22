@@ -39,9 +39,10 @@ const Card = ({ key, item }) => {
               )}
             </div>
             <div className={styles.details}>
-              <Link href={`/authors/${item.user.name}`}>
+              {/* <Link href={`/authors/${item.user.name}`}>
                 <span className={styles.authorName}>{item.user.name}</span>
-              </Link>
+              </Link> */}
+              <span className={styles.authorName}>{item.user.name}</span>
             </div>
           </div>
         </div>

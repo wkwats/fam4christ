@@ -3,29 +3,41 @@
 import { unstable_noStore as noStore } from "next/cache";
 import prisma from "./connect";
 
-export const getCategory = async ({ slug }) => {
-  const query = {
-    where: {
-      ...(slug && { slug }),
-    },
-  };
+export const getCategory = async ({ cat: slug }) => {
+  const res = await fetch(`http://localhost:3000/api/categories/${slug}`, {
+    cache: "force-cache",
+  });
 
-  try {
-    const [category, count] = await prisma.$transaction([
-      prisma.category.findUnique({
-        ...query,
-        include: {
-          user: true,
-        },
-      }),
-      prisma.article.count({ where: { catSlug: slug } }),
-    ]);
-
-    return { category, count };
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch post!");
+  if (!res.ok) {
+    throw new Error("Failed to fetch category!");
   }
+
+  console.log(JSON.stringify(res));
+
+  return res.json();
+
+  // const query = {
+  //   where: {
+  //     ...(slug && { slug }),
+  //   },
+  // };
+
+  // try {
+  //   const [category, count] = await prisma.$transaction([
+  //     prisma.category.findUnique({
+  //       ...query,
+  //       include: {
+  //         user: true,
+  //       },
+  //     }),
+  //     prisma.article.count({ where: { catSlug: slug } }),
+  //   ]);
+
+  //   return { category, count };
+  // } catch (err) {
+  //   console.log(err);
+  //   throw new Error("Failed to fetch post!");
+  // }
 };
 
 export const getCategories = async () => {

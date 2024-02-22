@@ -22,7 +22,7 @@ const Comments = ({ articleSlug, session }) => {
   const status = !!session?.user;
 
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?articleSlug=${articleSlug}`,
+    `/api/comments?articleSlug=${articleSlug}`,
     fetcher
   );
 

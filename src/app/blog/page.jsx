@@ -9,7 +9,9 @@ import MiniProfile from "@/components/blogHeader/miniProfile/MiniProfile";
 const Blog = async ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
   const { cat } = searchParams;
-  const { category, count } = await getCategory(cat);
+
+  const { category, count } = await getCategory({ cat });
+
   const user = category.user;
   return (
     <div className={styles.container}>

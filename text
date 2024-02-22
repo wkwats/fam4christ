@@ -1,0 +1,17 @@
+npm run build && rsync -avz --exclude '.git' --exclude '.env' \
+-e "ssh -i ~/.ssh/ffc-21-mac.pem" \
+. ubuntu@13.51.146.210:/home/ubuntu/apps/fam4christ
+
+
+pm2 start npm --watch pages --name "next-fam4christ" -- start -- -p 3000
+
+
+FIREBASE=AIzaSyBeQAqSjZGL7RxxJWbVyvTutfBVqS_xkrU
+DATABASE_URL=prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsI>
+DIRECT_DATABASE_URL=mongodb+srv://wkwats:DIAfGVZXRezgW72b@fastapi.o2nwzof.mongo>
+AUTH_SECRET=o6NxfKW5UREtwrjJxfkjJMEbs4gS0rGa1odasTJl54zf0AvWQ0QAxbxueAMPuD98fY6>
+AUTH_URL=https://famforchrist.com/api/auth
+AUTH_GITHUB_ID=895997d70aa4a254d16c
+AUTH_GITHUB_SECRET=f2e2a5f529cc159831ac96738fa5a6f1500c6874
+AUTH_GOOGLE_ID=411230464671-jpiakj13fjgdtnpj2d4ugh2pofpqkf5a.apps.googleusercon>
+AUTH_GOOGLE_SECRET=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

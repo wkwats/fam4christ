@@ -5,13 +5,6 @@ import CatLink from "./categoryNav/CategoryNav";
 import { AddCategory } from "../AddCategory";
 import { auth } from "@/utils/auth";
 
-// const categories = [
-//   { title: "The Concerned Parent" },
-//   { title: "The Concerned Youth" },
-//   { title: "The Concerned Community" },
-//   { title: "The Concerned Teachers" },
-// ];
-
 async function CategoryList() {
   const session = await auth();
   const categories = await getCategories();

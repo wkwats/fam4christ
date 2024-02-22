@@ -16,7 +16,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 RUN npm ci
 
-RUN addgroup -g 1001 -S nodejs
+RUN addgroup -g  -S nodejs
 RUN adduser -S nextjs -u 1001
 USER nextjs
 
