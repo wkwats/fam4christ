@@ -17,6 +17,6 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
-        run: docker build -t fam4christ .
+        run: docker build -t adhuhuri/fam4christ .
       - name: Docker image push to hub
         run: docker push adhuhuri/fam4christ:latest
