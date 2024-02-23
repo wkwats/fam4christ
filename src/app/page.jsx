@@ -5,7 +5,7 @@ import TopicLinks from "@/components/topics/TopicLinks";
 import { CardList } from "@/components/cardList/CardList";
 import Featured from "@/components/featured/Featured";
 import Menu from "@/components/menu/menu";
-import Notifications from "@/components/notifications/notifications";
+import Notifications from "@/components/notifications/Notifications";
 import { Suspense } from "react";
 
 const Home = ({ searchParams }) => {
