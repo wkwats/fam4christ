@@ -6,7 +6,7 @@ const notifications = [
     description: "1 hour ago",
   },
   {
-    title: "You have a new message!",
+    title: "You have a new article!",
     description: "1 hour ago",
   },
   {
