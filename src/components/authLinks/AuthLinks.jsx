@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import NavLink from "../navbar/links/navlink/navLink";
+import NavLink from "../navbar/links/navlink/Nav";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
 

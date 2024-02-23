@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./navlink.module.css";
+import styles from "./nav.module.css";
 
 function navLink({ item }) {
   return (

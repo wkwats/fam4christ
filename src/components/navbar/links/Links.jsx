@@ -1,6 +1,6 @@
 import AuthLinks from "@/components/authLinks/AuthLinks";
 import styles from "./links.module.css";
-import NavLink from "./navlink/navLink";
+import NavLink from "./navlink/Nav";
 import { auth } from "@/utils/auth";
 
 const links = [

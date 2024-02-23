@@ -1,5 +1,5 @@
 import styles from "./dashnav.module.css";
-import NavLink from "../navbar/links/navlink/navLink";
+import NavLink from "../navbar/links/navlink/Nav";
 
 const links = [
   {
