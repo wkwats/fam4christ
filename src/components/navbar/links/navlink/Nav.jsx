@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./nav.module.css";
 
-function navLink({ item }) {
+function Nav({ item }) {
   return (
     <div
       className={styles.container}
@@ -16,4 +16,4 @@ function navLink({ item }) {
   );
 }
 
-export default navLink;
+export default Nav;
