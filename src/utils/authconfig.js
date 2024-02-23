@@ -60,7 +60,6 @@ export const authConfig = {
       const isDashAdmin = auth?.user.role == "admin";
       const isAuthor = auth?.user.role == "author";
       const isOnAdminPanel = nextUrl?.pathname.startsWith("/dashboard");
-      console.log(isAuthor);
       const isOnLoginPage = nextUrl?.pathname.startsWith("/login");
 
       // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD

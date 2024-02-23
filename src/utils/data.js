@@ -13,29 +13,6 @@ export const getCategory = async ({ cat: slug }) => {
   }
 
   return res.json();
-
-  // const query = {
-  //   where: {
-  //     ...(slug && { slug }),
-  //   },
-  // };
-
-  // try {
-  //   const [category, count] = await prisma.$transaction([
-  //     prisma.category.findUnique({
-  //       ...query,
-  //       include: {
-  //         user: true,
-  //       },
-  //     }),
-  //     prisma.article.count({ where: { catSlug: slug } }),
-  //   ]);
-
-  //   return { category, count };
-  // } catch (err) {
-  //   console.log(err);
-  //   throw new Error("Failed to fetch post!");
-  // }
 };
 
 export const getCategories = async () => {
