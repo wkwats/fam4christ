@@ -111,33 +111,20 @@ export const getPosts = async (page, cat) => {
 };
 
 export const getFeaturedPost = async () => {
-  try {
-    const article = await prisma.article.findMany({
-      orderBy: {
-        views: "asc",
-      },
-      include: {
-        user: {
-          select: {
-            name: true,
-            image: true,
-          },
-        },
-        category: {
-          select: {
-            title: true,
-            img: true,
-          },
-        },
-      },
-      take: 5,
-    });
+  const page = 1;
+  const cat = "";
+  const res = await fetch(
+    `http://localhost:3000/api/posts?page=${page}&cat=${cat}`,
+    {
+      cache: "no-store",
+    }
+  );
 
-    return article;
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch post!");
+  if (!res.ok) {
+    throw new Error("Failed");
   }
+
+  return res.json();
 };
 
 export const getPost = async (slug) => {

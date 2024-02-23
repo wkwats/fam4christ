@@ -22,6 +22,9 @@ export const GET = async (req) => {
     const [articles, count] = await prisma.$transaction([
       prisma.article.findMany({
         ...query,
+        orderBy: {
+          views: "asc",
+        },
         include: {
           user: {
             select: {

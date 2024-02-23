@@ -7,8 +7,9 @@ import parse from "html-react-parser";
 import { Skeleton } from "@/components/ui/skeleton";
 
 async function Featured() {
-  const article = await getFeaturedPost();
-  const post = article[0];
+  const { articles } = await getFeaturedPost();
+
+  const post = articles[0];
   if (post === undefined) {
     return (
       <div className={styles.featured}>
