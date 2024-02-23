@@ -5,14 +5,14 @@ npm run build && rsync -avz --exclude '.git' --exclude '.env' \
 
 pm2 start npm --watch pages --name "next-fam4christ" -- start -- -p 3000
 
-
 FIREBASE=AIzaSyBeQAqSjZGL7RxxJWbVyvTutfBVqS_xkrU
-DATABASE_URL=prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsI>
-DIRECT_DATABASE_URL=mongodb+srv://wkwats:DIAfGVZXRezgW72b@fastapi.o2nwzof.mongo>
-AUTH_SECRET=o6NxfKW5UREtwrjJxfkjJMEbs4gS0rGa1odasTJl54zf0AvWQ0QAxbxueAMPuD98fY6>
+DATABASE_URL=prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZDA4Mjc4YmYtYWM5MS00OGY2LWJkMzAtYzUxYjFkYzM2MTM1IiwidGVuYW50X2lkIjoiZDgxMmU3NWI3NTJlNDUwNzA2YWU4OTYyYjM2NTcxYzllNmQzOThkMTViZGE3MjdmMTEyYzllNTVmN2E4MTc4YSIsImludGVybmFsX3NlY3JldCI6IjhhZThhZmFhLTg1N2QtNGE0Yy1iYWFmLTI5NzhiZTdmM2JlZiJ9.nJ3XmfC1Uzb0wpBCxan7ZzaozI7eDHpbXUeHADozJiY
+DIRECT_DATABASE_URL=mongodb+srv://wkwats:DIAfGVZXRezgW72b@fastapi.o2nwzof.mongodb.net/fastapi?retryWrites=true&w=majority
+AUTH_SECRET=o6NxfKW5UREtwrjJxfkjJMEbs4gS0rGa1odasTJl54zf0AvWQ0QAxbxueAMPuD98fY6uY5jSL1zAgZFvmA
 AUTH_URL=https://famforchrist.com/api/auth
 AUTH_GITHUB_ID=895997d70aa4a254d16c
 AUTH_GITHUB_SECRET=f2e2a5f529cc159831ac96738fa5a6f1500c6874
 AUTH_GOOGLE_ID=411230464671-mvfquvctfbsdn8a6rg2jtns1i7alivrr.apps.googleusercontent.com
 AUTH_GOOGLE_SECRET=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
+
 

@@ -21,12 +21,13 @@ const color_list = [
 ];
 
 const MenuPosts = async ({ withImage }) => {
-  const { article } = await getFeaturedPost();
+  const { articles } = await getFeaturedPost();
+  const firstFive = articles.slice(0, 3);
 
   return (
     <div className={styles.items}>
-      {article &&
-        article.map((item) => {
+      {articles &&
+        firstFive.map((item) => {
           return (
             <Link key={item._id} href="/" className={styles.item}>
               {withImage && (
