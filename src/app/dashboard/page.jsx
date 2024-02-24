@@ -5,6 +5,7 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
       <CategoryList />
+      <div>Here</div>
     </div>
   );
 }

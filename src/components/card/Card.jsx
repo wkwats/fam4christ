@@ -59,9 +59,7 @@ const Card = ({ key, item }) => {
           <span className={styles.userTitle}>{item.title}</span>
         </Link>
 
-        <div className={styles.desc}>
-          {parse(`${item?.desc.substring(0, 80)}`)}
-        </div>
+        <div className={styles.desc}>{parse(`${item?.desc}`)}</div>
 
         <Link href={`/blog/${item.slug}`} className={styles.link}>
           Read More

@@ -57,10 +57,12 @@ export const authConfig = {
     authorized({ auth, request: { nextUrl } }) {
       const user = auth?.user;
 
-      const isDashAdmin = auth?.user.role == "admin";
+      const isAdmin = auth?.user.role == "admin";
       const isAuthor = auth?.user.role == "author";
       const isOnAdminPanel = nextUrl?.pathname.startsWith("/dashboard");
       const isOnLoginPage = nextUrl?.pathname.startsWith("/login");
+
+      console.log(`THIS IS AN ADMIN ${isAdmin}`);
 
       // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
 

@@ -84,6 +84,13 @@
   color: var(--headings-soft);
   font-weight: 200;
 }
+.desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 
 .footerIcon {
   position: relative;

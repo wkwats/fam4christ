@@ -19,7 +19,7 @@ async function CategoryList() {
           <div className={styles.links}>
             <AddCategory session={session} />
             {categories &&
-              categories.map((cat) => (
+              categories?.map((cat) => (
                 <CatLink
                   item={{
                     ...cat,

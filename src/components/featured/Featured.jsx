@@ -74,9 +74,7 @@ async function Featured() {
             </div>
           </div>
           <span className={styles.userTitle}>{post?.title}</span>
-          <div className={styles.desc}>
-            {parse(`${post?.desc.substring(0, 80)}`)}
-          </div>
+          <div className={styles.desc}>{parse(`${post?.desc}`)}</div>
           <div className={styles.buttons}>
             <Link href={`/blog/${post?.slug}`} className={styles.button}>
               Read more ...{" "}

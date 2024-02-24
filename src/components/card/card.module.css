@@ -98,6 +98,11 @@
   font-size: 18px;
   font-weight: 300;
   color: var(--softTextColor);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .link {
