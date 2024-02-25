@@ -1,6 +1,8 @@
 import styles from "./dash.module.css";
 import { TopCards } from "./ui/topcards/TopCards";
 import ArticleList from "./ui/articlelist/ArticleList";
+import Chart from "./ui/chart/chart";
+import Notifications from "@/components/notifications/Notifications";
 
 export default function Dashboard() {
   return (
@@ -8,8 +10,11 @@ export default function Dashboard() {
       <div className={styles.leftdiv}>
         <TopCards />
         <ArticleList />
+        <Chart />
       </div>
-      <div className={styles.rightdiv}>Right</div>
+      <div className={styles.rightdiv}>
+        <Notifications />
+      </div>
     </div>
   );
 }

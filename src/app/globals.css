@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --bg: rgb(255, 252, 253);
-    --foreground-rgb: rgb(255, 247, 250);
-    --background-second: rgb(255, 234, 242);
-    --background-third: rgb(245, 238, 240);
-    --text-color: rgb(57, 54, 55);
+    --bg: #fffcfd;
+    --foreground-rgb: #fff7fa;
+    --background-second: #ffeaf2;
+    --background-third: #f5eef0;
+    --text-color: #393637;
     --headings-soft: #555;
     --btn: #ff2e7b;
     --bg-primary: #ff2e7b;

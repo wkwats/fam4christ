@@ -1,0 +1,12 @@
+.container {
+  height: 450px;
+  background-color: var(--foreground-rgb);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 200;
+  color: var(--headings-soft);
+  margin-bottom: 20px;
+}
