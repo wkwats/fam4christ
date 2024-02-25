@@ -1,9 +1,13 @@
 .container {
   height: 100px;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
+  background-color: var(--bg);
+  top: 0px;
+  z-index: 999;
 }
 .logo {
   font-weight: bold;

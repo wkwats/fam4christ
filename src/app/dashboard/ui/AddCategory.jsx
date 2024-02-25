@@ -21,9 +21,10 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import { Progress } from "./ui/progress";
+
 import { useRouter } from "next/navigation";
 import { toTitleCase } from "@/utils/logic";
+import { Progress } from "@/components/ui/progress";
 
 export const AddCategory = ({ session }) => {
   const [file, setFile] = useState(null);
@@ -97,12 +98,12 @@ export const AddCategory = ({ session }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Add A New Blog Title</Button>
+        <Button variant="outline">CREATE A NEW TOPIC TITLE</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add Blog Title</DialogTitle>
-          <DialogDescription>Add a New Blog Page Title.</DialogDescription>
+          <DialogTitle>Add A TOPIC</DialogTitle>
+          <DialogDescription>Add a new topic to blog about.</DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-4 py-4">
@@ -116,7 +117,7 @@ export const AddCategory = ({ session }) => {
             />
           </div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="title">Title</Label>
+            <Label htmlFor="title">Topic Title</Label>
             <Input
               type="text"
               id="title"

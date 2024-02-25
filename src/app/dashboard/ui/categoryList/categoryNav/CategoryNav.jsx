@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 function CatLink({ item }) {
   const pathName = usePathname();
 
+  console.log(pathName);
   return (
     <div
       className={`${styles.container} ${
