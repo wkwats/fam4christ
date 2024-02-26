@@ -26,7 +26,7 @@ export default function MiniProfile({ user }) {
 
         <div className={styles.authorTitle}>Bio</div>
         <div className={styles.authorBio}>
-          <p>A Father, a Brother Who loves God ....</p>
+          {/* <p>A Father, a Brother Who loves God ....</p> */}
         </div>
         {/* <div className={styles.buttons}>
           <button>Clap</button>

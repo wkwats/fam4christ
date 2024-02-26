@@ -6,6 +6,7 @@ import moment from "moment";
 import parse from "html-react-parser";
 import { Skeleton } from "@/components/ui/skeleton";
 import Notifications from "../notifications/Notifications";
+import kFormatter from "@/utils/logic";
 
 async function Featured() {
   const { articles } = await getFeaturedPost();
@@ -92,14 +93,18 @@ async function Featured() {
                   <Image alt="heart" fill src="/heart.png" />
                 </div>
                 <span className={styles.footerVerticalLine}>|</span>
-                <span className={styles.authorName}>1.5K</span>
+                <span className={styles.authorName}>
+                  {kFormatter(post?.likes)}
+                </span>
               </div>
               <div className={styles.footerDiv}>
                 <div className={styles.footerIcon}>
                   <Image alt="message" fill src="/message.png" />
                 </div>
                 <span className={styles.footerVerticalLine}>|</span>
-                <span className={styles.authorName}>100</span>
+                <span className={styles.authorName}>
+                  {kFormatter(post?.comments.length)}
+                </span>
               </div>
             </div>
           </div>

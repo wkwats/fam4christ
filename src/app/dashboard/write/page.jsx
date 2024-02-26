@@ -55,14 +55,13 @@ const WritePage = ({ searchParams }) => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
-            setOpen(!open);
           });
         }
       );
     };
 
     file && upload();
-  }, [file, open]);
+  }, [file]);
 
   const slugify = (str) =>
     str

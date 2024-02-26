@@ -1,10 +1,10 @@
 .container {
   flex: 5;
+  margin-top: 60px;
 }
 
 .title {
-  font-size: small;
-  font-weight: bold;
-  margin: 50px 0px;
+  font-weight: 200;
   color: var(--headings-soft);
+  margin-bottom: 20px;
 }
