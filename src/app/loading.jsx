@@ -1,10 +1,12 @@
+import styles from "./loading.module.css";
+
 export default function Loading() {
   return (
-    <main>
-      <div class="text-center">
-        <h2 className="text-prmary">Loading...</h2>
-        <p>Coming up shortly</p>
+    <div className={styles.container}>
+      <div class={styles.ring}>
+        Loading
+        <span></span>
       </div>
-    </main>
+    </div>
   );
 }

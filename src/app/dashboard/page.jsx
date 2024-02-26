@@ -5,6 +5,11 @@ import Chart from "./ui/chart/chart";
 import Notifications from "@/components/notifications/Notifications";
 import { getPosts, getPostsDash } from "@/utils/data";
 
+export const metadata = {
+  title: "Dashboard | Families For Christ",
+  description: "Dashboard Families For Christ",
+};
+
 export default async function Dashboard() {
   let page = 1;
   let cat = "";

@@ -6,23 +6,26 @@ import { CardList } from "@/components/cardList/CardList";
 
 import Menu from "@/components/menu/menu";
 import Notifications from "@/components/notifications/Notifications";
-import { Suspense } from "react";
+
 import Featured from "@/components/featured/Featured";
+
+export const metadata = {
+  title: "Families For Christ",
+  description: "Home Page Families For Christ",
+};
 
 const Home = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
   const cat = "";
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className={styles.container}>
-        <Featured />
-        <TopicLinks />
-        <div className={styles.content}>
-          <Menu />
-          <CardList page={page} cat={cat} />
-        </div>
+    <div className={styles.container}>
+      <Featured />
+      <TopicLinks />
+      <div className={styles.content}>
+        <Menu />
+        <CardList page={page} cat={cat} />
       </div>
-    </Suspense>
+    </div>
   );
 };
 

@@ -10,6 +10,7 @@
     --background-third: #f5eef0;
     --text-color: #393637;
     --headings-soft: #555;
+    --background-soft: #dbdbdb;
     --btn: #ff2e7b;
     --bg-primary: #ff2e7b;
 
@@ -110,10 +111,12 @@ a {
 
 .wrapper {
   max-width: 1536px;
+
   margin-left: auto;
   margin-right: auto;
   padding-left: 80px;
   padding-right: 80px;
+  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 1536px) {

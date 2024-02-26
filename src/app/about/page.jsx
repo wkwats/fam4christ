@@ -1,6 +1,11 @@
 import styles from "./about.module.css";
 import ContactPage from "./contact/Contact";
 
+export const metadata = {
+  title: "About Page | Families For Christ",
+  description: "About Families For Christ",
+};
+
 const About = async () => {
   return (
     <div className={styles.container}>
