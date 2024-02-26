@@ -23,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 1.8em;
+  min-height: 200px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -33,7 +33,16 @@
   flex: 1;
 }
 
-.button,
+.button {
+  height: fit-content;
+  position: relative;
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 .addButton {
   height: 50px;
   border-radius: 4px;
@@ -44,7 +53,6 @@
   justify-content: center;
 }
 .button {
-  filter: grayscale(1);
   min-width: 50px;
 }
 
@@ -79,7 +87,9 @@
   border: none;
   outline: none;
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--headings-soft);
+  font-weight: 300;
+  font-style: italic;
 }
 .input:focus {
   box-shadow: 0 0 10px var(--background-second);
@@ -107,6 +117,8 @@
 
 .tagscontainer {
   display: flex;
+  padding: 20px;
+  box-shadow: 0 0 10px var(--background-second);
   align-items: center;
   gap: 0.5em;
   flex: 2;

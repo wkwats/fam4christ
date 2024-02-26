@@ -15,7 +15,6 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-// import ReactQuill from "react-quill";
 
 const WritePage = ({ searchParams }) => {
   const { category } = searchParams;
@@ -56,6 +55,7 @@ const WritePage = ({ searchParams }) => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
+            setOpen(!open);
           });
         }
       );
@@ -147,10 +147,16 @@ const WritePage = ({ searchParams }) => {
       )}
 
       <div className={styles.btncontainer}>
+        <div className={styles.button} onClick={() => setOpen(!open)}>
+          <Image
+            className={styles.uploadedimg}
+            src={media ? media : "/no-image.png"}
+            alt="uploaded image"
+            width={150}
+            height={150}
+          />
+        </div>
         <div className={styles.btns}>
-          <button className={styles.button} onClick={() => setOpen(!open)}>
-            <Image src="/photo.png" alt="" width={30} height={30} />
-          </button>
           {open && (
             <div className={styles.add}>
               <input
