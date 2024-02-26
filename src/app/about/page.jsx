@@ -22,9 +22,9 @@ const About = async () => {
             </p>
             <b>A Wealth of Resources:</b>
             <p>
-              Discover our website's array of enriching materials, including
-              daily devotionals, family-centric activities, and valuable
-              parenting insights deeply rooted in Christian principles.
+              Discover our website&apos;s array of enriching materials,
+              including daily devotionals, family-centric activities, and
+              valuable parenting insights deeply rooted in Christian principles.
             </p>
             <b>Interactive Community Forum:</b>
             <p>
@@ -35,12 +35,11 @@ const About = async () => {
             <b>Building Foundational Strength:</b>
             <p>
               Our overarching mission is to fortify family bonds, deepen
-              spiritual connections, and guide families through life's
+              spiritual connections, and guide families through life&apos;s
               challenges with unwavering faith and resilience.
             </p>
             <b>Embrace the Journey: </b>
             <p>
-              {" "}
               Become a cherished member of our community, where we collectively
               uplift, inspire, and support one another on the shared path of
               faith and family. Join us at Families for Christ and embark on a

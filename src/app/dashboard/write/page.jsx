@@ -62,7 +62,7 @@ const WritePage = ({ searchParams }) => {
     };
 
     file && upload();
-  }, [file]);
+  }, [file, open]);
 
   const slugify = (str) =>
     str
