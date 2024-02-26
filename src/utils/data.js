@@ -2,6 +2,7 @@
 
 import { unstable_noStore as noStore } from "next/cache";
 import prisma from "./connect";
+import { auth } from "./auth";
 
 export const getCategory = async ({ cat: slug }) => {
   const res = await fetch(`http://localhost:3000/api/categories/${slug}`, {
@@ -66,6 +67,47 @@ export const getPostsData = async (req) => {
     ]);
 
     return { articles, count, POST_PER_PAGE };
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch posts!");
+  }
+};
+
+export const getPostsDash = async () => {
+  const session = await auth();
+  console.log(session.email);
+  try {
+    const [articles, count, views] = await prisma.$transaction([
+      prisma.article.findMany({
+        include: {
+          user: {
+            select: {
+              name: true,
+              image: true,
+            },
+          },
+          category: {
+            select: {
+              title: true,
+            },
+          },
+          comments: {
+            select: {
+              desc: true,
+            },
+          },
+        },
+      }),
+      prisma.article.count(),
+      prisma.article.groupBy({
+        by: ["createdAt"],
+        _sum: {
+          views: true,
+        },
+      }),
+    ]);
+
+    return { articles, count, views };
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch posts!");

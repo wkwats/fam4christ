@@ -2,7 +2,9 @@ import Image from "next/image";
 import styles from "./dasharticles.module.css";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { nameInitials } from "@/utils/logic";
-const ArticleList = () => {
+import moment from "moment/moment";
+
+const ArticleList = ({ articles }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Latest Articles</h2>
@@ -16,35 +18,31 @@ const ArticleList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                {/* <Image
-                  src="/noavatar.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                /> */}
-                <div>
-                  <Avatar>
-                    {/* <AvatarImage src={user.image} /> */}
-                    <AvatarImage src="" />
-                    {/* <AvatarFallback>{nameInitials(user?.name)}</AvatarFallback> */}
-                    <AvatarFallback>WK</AvatarFallback>
-                  </Avatar>
+          {articles?.map((item) => (
+            <tr key={item.id}>
+              <td>
+                <div className={styles.user}>
+                  <div>
+                    <Avatar>
+                      <AvatarImage src={item.user.image} />
+
+                      <AvatarFallback>
+                        {nameInitials(item.user.name)}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+                  {item.user.name}
                 </div>
-                Watson Kambo
-              </div>
-            </td>
-            <td>Navigating the Christian Marriage Landscape</td>
-            <td>10.12.2023</td>
-            <td>
-              <span className={`${styles.status} ${styles.pending}`}>
-                Pending
-              </span>
-            </td>
-          </tr>
+              </td>
+              <td>{item.title}</td>
+              <td>{moment().format("DD/MM/YY")}</td>
+              <td>
+                <span className={`${styles.status} ${styles.pending}`}>
+                  {item.status}
+                </span>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

@@ -19,7 +19,7 @@ export const GET = async (req) => {
   };
 
   try {
-    const [articles, count] = await prisma.$transaction([
+    const [articles, count, views] = await prisma.$transaction([
       prisma.article.findMany({
         ...query,
         orderBy: {
@@ -45,10 +45,15 @@ export const GET = async (req) => {
         },
       }),
       prisma.article.count({ where: query.where }),
+      prisma.article.aggregate({
+        _sum: {
+          views: true,
+        },
+      }),
     ]);
 
     return new NextResponse(
-      JSON.stringify({ articles, count }, { status: 200 })
+      JSON.stringify({ articles, count, views }, { status: 200 })
     );
   } catch (err) {
     console.log(err);
