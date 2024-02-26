@@ -1,5 +1,7 @@
 .notifications {
+  margin-top: 30px;
   flex: 2;
+  min-height: 100%;
   background: var(--foreground-rgb);
   display: flex;
   flex-direction: column;

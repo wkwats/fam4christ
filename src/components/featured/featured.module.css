@@ -1,17 +1,39 @@
-.featured {
-  flex: 5;
+.container {
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 66px;
+  font-weight: 300;
+  color: var(--headings-soft);
+  flex: 3;
+}
+
+.middiv {
   display: flex;
-  height: 100%;
+}
+.featured {
+  flex: 3;
+  margin-top: 30px;
+  display: flex;
+  min-height: 100%;
+  gap: 50px;
   border-radius: 4px;
 }
 
 .imgContainer {
   position: relative;
+  height: 500px;
   flex: 1;
+}
+
+.image {
+  object-fit: cover;
 }
 .card {
   flex: 1;
   display: flex;
+
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
@@ -97,13 +119,10 @@
   width: 20px;
   height: 20px;
 }
-.buttons {
-  display: flex;
-  gap: 20px;
-}
+
 .button {
-  padding: 20px;
-  min-width: 120px;
+  padding: 16px 20px;
+  width: max-content;
   cursor: pointer;
   border: 2px solid var(--background-second);
   border-radius: 5px;
@@ -111,8 +130,33 @@
   color: var(--bg-primary);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+
   .imgContainer {
     display: none;
+  }
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
   }
 }
