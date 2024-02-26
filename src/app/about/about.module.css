@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 66px;
+  font-weight: 300;
+  color: var(--headings-soft);
+}
+
+.wrapper {
+  margin-top: 30px;
+  display: flex;
+  gap: 100px;
+  width: 100%;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.textdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.textdiv > b {
+  color: var(--headings-soft);
+  text-transform: capitalize;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.textdiv > p {
+  color: var(--text-color);
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box h1 {
+  color: var(--btn);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
+}

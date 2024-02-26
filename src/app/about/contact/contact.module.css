@@ -1,0 +1,40 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form input,
+.form textarea {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--background-second);
+  outline: none;
+  background-color: var(--foreground-rgb);
+  color: var(--text-color);
+}
+
+.form button {
+  padding: 20px;
+  background-color: var(--btn);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 200;
+  font-size: large;
+  color: var(--headings-soft);
+}

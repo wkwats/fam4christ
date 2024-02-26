@@ -1,35 +1,66 @@
-import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
-import { auth } from "@/utils/auth";
+import styles from "./about.module.css";
+import ContactPage from "./contact/Contact";
 
 const About = async () => {
   return (
-    <>
-      <h1>Welcome to Families for Christ!</h1>
-      <p>
-        At Families for Christ, we are dedicated to providing a supportive
-        online community for families who share a common faith in Christ. Our
-        mission is to strengthen family bonds, deepen spiritual connections, and
-        foster a sense of community among like-minded individuals.
-      </p>
-      <p>
-        Through our website, families can access a variety of resources,
-        including daily devotionals, family-friendly activities, parenting tips
-        rooted in Christian values, and a supportive online forum where members
-        can connect, share their experiences, and offer encouragement to one
-        another.
-      </p>
-      <p>
-        We believe that by building strong family foundations on the teachings
-        of Christ, we can create lasting bonds, instill values that endure, and
-        navigate life&apos;s challenges with faith and resilience.
-      </p>
-      <p>
-        Join us at Families for Christ and be a part of a community that
-        uplifts, inspires, and supports one another on our shared journey of
-        faith and family.
-      </p>
-    </>
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        Families for Christ: Cultivating Unity and Faithful Connections
+      </h1>
+      <div className={styles.wrapper}>
+        <div className={styles.textContainer}>
+          <div className={styles.textdiv}>
+            <b>Establishing Supportive Ties: </b>
+            <p>
+              Devoted to fostering a welcoming community, bringing together
+              families who share a profound faith in Christ.
+            </p>
+            <b>A Wealth of Resources:</b>
+            <p>
+              Discover our website's array of enriching materials, including
+              daily devotionals, family-centric activities, and valuable
+              parenting insights deeply rooted in Christian principles.
+            </p>
+            <b>Interactive Community Forum:</b>
+            <p>
+              Engage in meaningful conversations with like-minded individuals,
+              sharing personal experiences and providing encouragement within
+              our supportive online forum.
+            </p>
+            <b>Building Foundational Strength:</b>
+            <p>
+              Our overarching mission is to fortify family bonds, deepen
+              spiritual connections, and guide families through life's
+              challenges with unwavering faith and resilience.
+            </p>
+            <b>Embrace the Journey: </b>
+            <p>
+              {" "}
+              Become a cherished member of our community, where we collectively
+              uplift, inspire, and support one another on the shared path of
+              faith and family. Join us at Families for Christ and embark on a
+              journey of connection and spiritual growth.
+            </p>
+          </div>
+
+          <div className={styles.boxes}>
+            <div className={styles.box}>
+              <h1>100</h1>
+              <p>Authors</p>
+            </div>
+            <div className={styles.box}>
+              <h1>10 K+</h1>
+              <p>Articles Written</p>
+            </div>
+            <div className={styles.box}>
+              <h1>100 K+</h1>
+              <p>Unique Views</p>
+            </div>
+          </div>
+        </div>
+        <ContactPage />
+      </div>
+    </div>
   );
 };
 
