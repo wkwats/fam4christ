@@ -62,8 +62,6 @@ export const authConfig = {
       const isOnAdminPanel = nextUrl?.pathname.startsWith("/dashboard");
       const isOnLoginPage = nextUrl?.pathname.startsWith("/login");
 
-      console.log(`THIS IS AN ADMIN ${isAdmin}`);
-
       // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
 
       if (isOnAdminPanel && !isAuthor) {
