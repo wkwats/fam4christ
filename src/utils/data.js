@@ -5,7 +5,7 @@ import prisma from "./connect";
 import { auth } from "./auth";
 
 export const getCategory = async ({ cat: slug }) => {
-  const res = await fetch(`http://localhost:3000/api/categories/${slug}`, {
+  const res = await fetch(`http://127.0.0.1:3000/api/categories/${slug}`, {
     cache: "force-cache",
   });
 
@@ -17,7 +17,7 @@ export const getCategory = async ({ cat: slug }) => {
 };
 
 export const getCategories = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("http://127.0.0.1:3000/api/categories", {
     cache: "no-store",
   });
 
@@ -116,7 +116,7 @@ export const getPostsDash = async () => {
 
 export const getPosts = async (page, cat) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `http://127.0.0.1:3000/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
@@ -133,7 +133,7 @@ export const getFeaturedPost = async () => {
   const page = 1;
   const cat = "";
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat}`,
+    `http://127.0.0.1:3000/api/posts?page=${page}&cat=${cat}`,
     {
       cache: "no-store",
     }
@@ -147,7 +147,7 @@ export const getFeaturedPost = async () => {
 };
 
 export const getPost = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`http://127.0.0.1:3000/api/posts/${slug}`, {
     cache: "no-store",
   });
 
