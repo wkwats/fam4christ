@@ -1,11 +1,9 @@
-import Image from "next/image";
 import styles from "./home.module.css";
-import Link from "next/link";
+
 import TopicLinks from "@/components/topics/TopicLinks";
 import { CardList } from "@/components/cardList/CardList";
 
 import Menu from "@/components/menu/menu";
-import Notifications from "@/components/notifications/Notifications";
 
 import Featured from "@/components/featured/Featured";
 
