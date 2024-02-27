@@ -1,19 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./nav.module.css";
+import { usePathname } from "next/navigation";
 
-function Nav({ item }) {
+const Nav = ({ item }) => {
+  const pathName = usePathname();
+
   return (
-    <div
-      className={styles.container}
-      // ${
-      //   pathName === item.path && styles.active
-      // }
+    <Link
+      href={item.path}
+      className={`${styles.container} ${
+        pathName === item.path && styles.active
+      }`}
     >
-      <Link href={item.path} key={item.title}>
-        {item.title}
-      </Link>
-    </div>
+      {item.title}
+    </Link>
   );
-}
+};
 
 export default Nav;
