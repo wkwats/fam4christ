@@ -7,7 +7,7 @@ EXPOSE 3000
 FROM base as builder
 WORKDIR /app
 COPY . .
-RUN npm run build
+RUN prisma generate --no-engine && npm run build
 
 
 FROM base as production
