@@ -23,7 +23,7 @@ export const GET = async (req) => {
       prisma.article.findMany({
         ...query,
         orderBy: {
-          views: "asc",
+          views: "desc",
         },
         include: {
           user: {
