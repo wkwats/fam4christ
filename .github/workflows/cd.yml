@@ -14,12 +14,11 @@ jobs:
       - name: Pull Docker image
         run: sudo docker pull adhuhuri/fam4christ:latest
       - name: Delete Old docker container
-        run: sudo docker rm -f fam4christ-container || true
+        run: sudo docker rm -f fam4christ || true
       - name: Run Docker Container
-        run: sudo docker run -d -p 3000:3000 --env-file ~/app/.env --name fam4christ adhuhuri/fam4christ
-      - name: exec Docker
-        run: sudo docker exec -it fam4christ sh
-      - name: Generate Prisma
-        run: npx prisma generate --no-engine
-      - name: Exit Docker
-        run: exit
+        run: |
+          sudo docker run -d -p 3000:3000 --env-file ~/app/.env --name fam4christ adhuhuri/fam4christ
+          sudo docker exec -it fam4christ sh
+          npx prisma generate --no-engine
+          exit
+          sudo docker restart fam4christ
