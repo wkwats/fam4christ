@@ -44,9 +44,9 @@ export default async function Dashboard() {
         <ArticleList articles={articles} />
         <Chart />
       </div>
-      <div className={styles.rightdiv}>
+      {/* <div className={styles.rightdiv}>
         <Notifications />
-      </div>
+      </div> */}
     </div>
   );
 }

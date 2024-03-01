@@ -16,4 +16,8 @@ jobs:
       - name: Delete Old docker container
         run: sudo docker rm -f fam4christ-container || true
       - name: Run Docker Container
-        run: sudo docker run --env-file ~/.env -d -p 3000:3000 --name fam4christ-container adhuhuri/fam4christ
+        run: sudo docker run -d -p 3000:3000 --env-file ~/app/.env --name fam4christ adhuhuri/fam4christ
+      - name: Run database
+        run: sudo docker exec -it fam4christ sh
+        run: npx prisma generate --no-engine
+        run: exit

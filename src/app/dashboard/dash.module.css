@@ -5,12 +5,10 @@
   gap: 20px;
 }
 .leftdiv {
-  flex: 4;
   display: flex;
   width: 100%;
   flex-direction: column;
   gap: 20px;
 }
 .rightdiv {
-  flex: 1;
 }
