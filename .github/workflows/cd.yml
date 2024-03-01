@@ -17,7 +17,9 @@ jobs:
         run: sudo docker rm -f fam4christ-container || true
       - name: Run Docker Container
         run: sudo docker run -d -p 3000:3000 --env-file ~/app/.env --name fam4christ adhuhuri/fam4christ
-      - name: Run database
+      - name: exec Docker
         run: sudo docker exec -it fam4christ sh
+      - name: Generate Prisma
         run: npx prisma generate --no-engine
+      - name: Exit Docker
         run: exit
