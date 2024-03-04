@@ -11,8 +11,7 @@ import kFormatter from "@/utils/logic";
 async function Featured() {
   const { articles } = await getFeaturedPost();
 
-  const post = articles[0];
-  if (post === undefined) {
+  if (articles.length === 0) {
     return (
       <div className={styles.featured}>
         <Skeleton className="h-[50%] w-[100%] rounded-xl" />
@@ -33,7 +32,7 @@ async function Featured() {
       </div>
     );
   }
-
+  const post = articles[0];
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>

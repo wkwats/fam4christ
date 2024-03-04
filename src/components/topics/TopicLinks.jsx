@@ -20,7 +20,7 @@ const TopicLinks = async () => {
       <h1 className={styles.title}>Popular Blog Titles</h1>
       <div className={styles.categories}>
         {categories &&
-          categories.map((item) => {
+          categories?.map((item) => {
             return (
               <Link
                 href={`/blog?cat=${item.slug}`}
