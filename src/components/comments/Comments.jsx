@@ -7,6 +7,8 @@ import useSWR from "swr";
 
 import { useState } from "react";
 import moment from "moment";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { nameInitials } from "@/utils/logic";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -63,15 +65,13 @@ const Comments = ({ articleSlug, session }) => {
           : data?.comments?.map((item) => (
               <div className={styles.comment} key={item.id}>
                 <div className={styles.user}>
-                  {item?.user?.image && (
-                    <Image
-                      src={item.user.image}
-                      alt=""
-                      width={50}
-                      height={50}
-                      className={styles.image}
-                    />
-                  )}
+                  <Avatar>
+                    <AvatarImage src={item?.user?.image} />
+                    <AvatarFallback>
+                      {nameInitials(item?.user?.name)}
+                    </AvatarFallback>
+                  </Avatar>
+
                   <div className={styles.userInfo}>
                     <span className={styles.username}>{item.user.name}</span>
                     <span className={styles.date}>

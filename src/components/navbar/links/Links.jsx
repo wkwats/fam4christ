@@ -2,6 +2,8 @@ import AuthLinks from "@/components/authLinks/AuthLinks";
 import styles from "./links.module.css";
 import NavLink from "./navlink/Nav";
 import { auth } from "@/utils/auth";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { nameInitials } from "@/utils/logic";
 
 const links = [
   {
@@ -45,7 +47,16 @@ const Links = async () => {
         {(isAdmin || isAuthor) && <NavLink item={dashboard} />}
 
         {session ? (
-          <NavLink item={logout} key={logout.title} />
+          <div className={styles.linkava}>
+            <NavLink item={logout} key={logout.title} />
+
+            <Avatar>
+              <AvatarImage src={session?.user?.image} />
+              <AvatarFallback>
+                {nameInitials(session?.user?.name)}
+              </AvatarFallback>
+            </Avatar>
+          </div>
         ) : (
           <NavLink item={login} key={login.title} />
         )}

@@ -108,7 +108,7 @@ async function Featured() {
             </div>
           </div>
         </div>
-        <Notifications />
+        {/* <Notifications /> */}
       </div>
     </div>
   );
