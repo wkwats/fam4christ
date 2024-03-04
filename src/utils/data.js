@@ -75,7 +75,7 @@ export const getPostsData = async (req) => {
 
 export const getPostsDash = async () => {
   const session = await auth();
-  console.log(session.email);
+
   try {
     const [articles, count, views] = await prisma.$transaction([
       prisma.article.findMany({

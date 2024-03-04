@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+.user {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.imagecontainer {
+  flex: 2;
+  height: 350px;
+  width: 350px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.image {
+  object-fit: cover;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+
+.headersec {
+  align-content: center;
+  width: 100%;
+  padding: 10px 0px;
+  border-top: 2px solid var(--background-second);
+  border-bottom: 2px solid var(--background-second);
+}
+.miniheader {
+  padding: 1em;
+  color: var(--headings-soft);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.name {
+  color: var(--headings-soft);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.email {
+  color: var(--headings-soft);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--headings-soft);
+  font-size: 1rem;
+  font-weight: 400;
+}

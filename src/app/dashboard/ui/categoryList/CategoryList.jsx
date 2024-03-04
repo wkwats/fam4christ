@@ -21,7 +21,6 @@ const sidebarlinks = [
 async function CategoryList() {
   const session = await auth();
   const user = session?.user;
-  console.log(session);
   const categories = await getCategories();
 
   return (

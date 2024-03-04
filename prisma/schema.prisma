@@ -45,6 +45,7 @@ model User {
   emailVerified DateTime?
   image         String?
   role          String
+  bio           String?
   // password      String?
   accounts      Account[]
   sessions      Session[]
