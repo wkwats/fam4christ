@@ -17,11 +17,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="container">
-          <div className="wrapper">
-            <Navbar />
-            <Suspense fallback={<Loading />}>{children}</Suspense>
-            <Footer />
-          </div>
+          <Navbar />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Footer />
         </div>
       </body>
     </html>

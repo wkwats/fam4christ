@@ -36,7 +36,7 @@ async function Featured() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Families for Christ,</b> Explore Diverse Topics by Our Team.
+        <b>Families for Christ,</b> explore diverse <b>topics</b> by our team.
       </h1>
 
       <div className={styles.middiv}>

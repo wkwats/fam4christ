@@ -1,8 +1,7 @@
 .container {
   min-width: 100%;
-  min-height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  min-height: 100%;
+  margin-bottom: 150px;
   display: flex;
   gap: 20px;
 }
@@ -11,7 +10,7 @@
   flex: 1;
   padding: 20px;
   border-radius: 5px;
-  background-color: var(--foreground-rgb);
+  /* background-color: var(--foreground-rgb); */
 }
 .wrapper {
   flex: 4;
@@ -19,4 +18,10 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: none;
+  }
 }
