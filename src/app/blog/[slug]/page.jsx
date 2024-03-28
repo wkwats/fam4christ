@@ -81,8 +81,7 @@ const Article = async ({ params }) => {
             <span className={styles.verticalLine}>|</span>
             <span className={styles.authorName}>
               {" "}
-              {/* {count ?? kFormatter(count)}100 */}
-              100
+              {count ?? kFormatter(count)}
             </span>
           </div>
         </div>

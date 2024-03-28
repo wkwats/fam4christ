@@ -14,7 +14,8 @@ const color_list = [
 ];
 
 const TopicLinks = async () => {
-  const categories = (await getCategories()) || [];
+  const categories = await getCategories();
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Blog Titles</h1>

@@ -70,12 +70,11 @@
 .post {
   flex: 5;
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .description p {
   font-size: 1.2rem;
-
   text-indent: 2em;
   font-family: "Lora", serif;
 }
