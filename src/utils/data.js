@@ -16,7 +16,7 @@ export const getCategory = async ({ cat: slug }) => {
   return res.json();
 };
 
-export const getCategories = async () => {
+export const getCategories1 = async () => {
   const res = await fetch("http://127.0.0.1:3000/api/categories", {
     cache: "no-store",
   });
@@ -26,6 +26,17 @@ export const getCategories = async () => {
   }
 
   return res.json();
+};
+
+export const getCategories = async () => {
+  try {
+    const categories = await prisma.category.findMany();
+
+    return { categories };
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch posts!");
+  }
 };
 
 export const getPostsData = async (req) => {

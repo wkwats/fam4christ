@@ -14,7 +14,7 @@ const color_list = [
 ];
 
 const TopicLinks = async () => {
-  const categories = await getCategories();
+  const { categories } = await getCategories();
 
   return (
     <div className={styles.container}>
