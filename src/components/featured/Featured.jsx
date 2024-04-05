@@ -7,11 +7,35 @@ import parse from "html-react-parser";
 import { Skeleton } from "@/components/ui/skeleton";
 import Notifications from "../notifications/Notifications";
 import kFormatter from "@/utils/logic";
+import prisma from "@/utils/connect";
 
 async function Featured() {
-  const { articles } = await getFeaturedPost();
+  const articles = await prisma.article.findMany({
+    include: {
+      user: {
+        select: {
+          name: true,
+          image: true,
+        },
+      },
+      category: {
+        select: {
+          title: true,
+        },
+      },
+      comments: {
+        select: {
+          desc: true,
+        },
+      },
+    },
+  });
 
-  if (articles === undefined) {
+  let post = articles.reduce(function (oldest, post) {
+    return (oldest.views || 0) > post.views ? oldest : post;
+  }, []);
+
+  if (articles.length === 0 || articles === undefined) {
     return (
       <div className={styles.featured}>
         <Skeleton className="h-[50%] w-[100%] rounded-xl" />
@@ -32,7 +56,7 @@ async function Featured() {
       </div>
     );
   }
-  const post = articles[0];
+  //const post = articles[0];
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>

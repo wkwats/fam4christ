@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AddCategory } from "../AddCategory";
 import { auth } from "@/utils/auth";
 import { nameInitials } from "@/utils/logic";
+import prisma from "@/utils/connect";
 
 const sidebarlinks = [
   {
@@ -21,7 +22,7 @@ const sidebarlinks = [
 async function CategoryList() {
   const session = await auth();
   const user = session?.user;
-  const categories = await getCategories();
+  const categories = (await prisma.category.findMany()) || [];
 
   return (
     <>

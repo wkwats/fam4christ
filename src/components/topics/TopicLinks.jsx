@@ -2,7 +2,9 @@ import Image from "next/image";
 import { TopicCard } from "./card/TopicCard";
 import styles from "./topic.module.css";
 import Link from "next/link";
-import { getCategories } from "@/utils/data";
+
+import prisma from "@/utils/connect";
+import { Skeleton } from "../ui/skeleton";
 
 const color_list = [
   "#5e4fff31",
@@ -14,7 +16,38 @@ const color_list = [
 ];
 
 const TopicLinks = async () => {
-  const { categories } = await getCategories();
+  const categories = (await prisma.category.findMany()) || [];
+
+  if (categories === undefined) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>Popular Blog Titles</h1>
+        <div className={styles.categories}>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-[50px] w-[250px] rounded-s" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>

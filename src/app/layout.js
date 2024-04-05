@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Chat } from "@/components/chat/chat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="container">
           <Navbar />
+          <div className="chat">{/* <Chat /> */}</div>
           <Suspense fallback={<Loading />}>{children}</Suspense>
+
           <Footer />
         </div>
       </body>
