@@ -4,7 +4,7 @@ import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 
 export const CardList = async ({ page, cat }) => {
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 8;
 
   const { articles, count } = await getPosts(page, cat);
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
