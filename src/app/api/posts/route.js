@@ -8,7 +8,7 @@ export const GET = async (req) => {
   const page = searchParams.get("page");
   const cat = searchParams.get("cat");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 8;
 
   const query = {
     take: POST_PER_PAGE,
@@ -19,38 +19,36 @@ export const GET = async (req) => {
   };
 
   try {
-    const [articles, count, views] = await prisma.$transaction([
-      prisma.article.findMany({
-        ...query,
-        orderBy: {
-          views: "desc",
-        },
-        include: {
-          user: {
-            select: {
-              name: true,
-              image: true,
-            },
-          },
-          category: {
-            select: {
-              title: true,
-            },
-          },
-          comments: {
-            select: {
-              desc: true,
-            },
+    const articles = await prisma.article.findMany({
+      ...query,
+      orderBy: {
+        createdAt: "desc",
+      },
+      include: {
+        user: {
+          select: {
+            name: true,
+            image: true,
           },
         },
-      }),
-      prisma.article.count({ where: query.where }),
-      prisma.article.aggregate({
-        _sum: {
-          views: true,
+        category: {
+          select: {
+            title: true,
+          },
         },
-      }),
-    ]);
+        comments: {
+          select: {
+            desc: true,
+          },
+        },
+      },
+    });
+    const count = await prisma.article.count({ where: query.where });
+    const views = await prisma.article.aggregate({
+      _sum: {
+        views: true,
+      },
+    });
 
     return new NextResponse(
       JSON.stringify({ articles, count, views }, { status: 200 })
