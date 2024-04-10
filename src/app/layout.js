@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="container">
           <Navbar />
-          <div className="chat">{/* <Chat /> */}</div>
+          <div className="chat">
+            <Chat />
+          </div>
           <Suspense fallback={<Loading />}>{children}</Suspense>
 
           <Footer />
