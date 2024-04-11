@@ -7,6 +7,7 @@ import { MainCard } from "./MainCard";
 import { io } from "socket.io-client";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { nameInitials } from "@/utils/logic";
+import { Aside } from "./Aside";
 
 function Help({ userName }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,25 +60,17 @@ function Help({ userName }) {
               </span>
             </div>
 
-            <div className="flex p-3 items-stretch">
+            <div className="flex items-stretch">
               <div className="flex flex-col flex-grow">
-                <div className="flex -space-x-4 rtl:space-x-reverse">
-                  {onlineUsers.map((user, index) => {
-                    return (
-                      <Avatar key={index}>
-                        <AvatarFallback className="text-white bg-gray-700 border-2 border-white">
-                          {nameInitials(user.username)}
-                        </AvatarFallback>
-                      </Avatar>
-                    );
-                  })}
-                </div>
+                <Aside onlineUsers={onlineUsers} />
               </div>
-              <MainCard
-                userName={userName}
-                socket={socket}
-                messages={messages}
-              />
+              <div className="relative border-0 w-2/3 h-fit">
+                <MainCard
+                  userName={userName}
+                  socket={socket}
+                  messages={messages}
+                />
+              </div>
             </div>
           </div>
 

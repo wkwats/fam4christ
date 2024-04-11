@@ -40,7 +40,7 @@ export function MainCard({ userName, socket, messages }) {
   }
 
   return (
-    <div className=" border-0 w-2/3 h-fit">
+    <>
       <CardDescription className=" font-semibold text-center text-lg  p-2">
         Chat: Amos
       </CardDescription>
@@ -99,7 +99,7 @@ export function MainCard({ userName, socket, messages }) {
           })}
         </div>
       </CardContent>
-      <div>
+      <div className="absolute w-full bottom-0 px-4 py-2">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -136,6 +136,6 @@ export function MainCard({ userName, socket, messages }) {
           </form>
         </Form>
       </div>
-    </div>
+    </>
   );
 }
