@@ -8,6 +8,7 @@ import { Chat } from "@/components/chat/chat";
 import Help from "@/components/help/Help";
 import { nanoid } from "nanoid";
 import { auth } from "@/utils/auth";
+import { ChatProvider } from "@/contect/ChatContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,22 +24,24 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container">
-          <Navbar />
-          <div className="fixed z-50 right-10 bottom-4 ">
-            {userName ? (
-              <Help userName={userName} />
-            ) : (
-              <Help userName={`Anony_${nan}`} />
-            )}
-          </div>
-          {/* <div className="chat">
+        <ChatProvider>
+          <div className="container">
+            <Navbar />
+            <div className="fixed z-50 right-10 bottom-4 ">
+              {userName ? (
+                <Help userName={userName} />
+              ) : (
+                <Help userName={`Anony_${nan}`} />
+              )}
+            </div>
+            {/* <div className="chat">
             <Chat />
           </div> */}
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+            {children}
 
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </ChatProvider>
       </body>
     </html>
   );

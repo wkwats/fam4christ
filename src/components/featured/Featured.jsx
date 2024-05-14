@@ -31,6 +31,8 @@ async function Featured() {
     },
   });
 
+  console.log(articles);
+
   let post = articles.reduce(function (oldest, post) {
     return (oldest.views || 0) > post.views ? oldest : post;
   }, []);
